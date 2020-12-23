@@ -78,79 +78,6 @@ public:
 				rearrange(F[t], F[f]);
 				count *= qu[i].weight;
 			}
-			//bool flag = true;
-			//int findex = getIndex(F, qu[i].from);
-			//int tindex = getIndex(F, qu[i].to);
-			//if (setStatus[findex] < 0 && setStatus[tindex] < 0) {	//¥[MST	- -
-			//	if (setStatus[findex] == -1 && setStatus[tindex] == -1) { //-1 -1
-			//		setStatus[findex]--;
-			//		setStatus[tindex] = F[findex];
-			//	}
-			//	else if (setStatus[findex] == -1 && setStatus[tindex] < -1) { //-1 -?
-			//		setStatus[tindex]--;
-			//		setStatus[findex] = F[tindex];
-			//	}
-			//	else if (setStatus[findex] < -1 && setStatus[tindex] == -1) {	//-? -1
-			//		setStatus[findex]--;
-			//		setStatus[tindex] = F[findex];
-			//	}
-			//	else {	//-? -?
-			//		//if (setStatus[findex] < setStatus[tindex]) {
-			//		setStatus[findex] += setStatus[tindex];
-			//		setStatus[tindex] = F[findex];
-			//		for (int j = 0; j < setStatus.size(); ++j) {
-			//			if (setStatus[j] == F[tindex]) setStatus[j] = F[findex];
-			//		}
-			//		/*}
-			//		else {
-			//			setStatus[tindex] += setStatus[findex];
-			//			setStatus[findex] = F[tindex];
-			//			for (int j = 0; j < setStatus.size(); ++j) {
-			//				if (setStatus[j] == F[findex]) setStatus[j] = F[tindex];
-			//			}
-			//		}*/
-			//	}
-			//}
-			//else if (setStatus[findex] >= 0 && setStatus[tindex] >= 0) {	
-			//	if(setStatus[findex] == setStatus[tindex]) flag = false;	//¤£¥[MST + +		
-			//	else{
-			//		flag = true;
-			//		int a = getIndex(F, setStatus[findex]);
-			//		int b = getIndex(F, setStatus[tindex]);
-			//		setStatus[a] += setStatus[b];
-			//		setStatus[b] = F[a];
-			//		for (int j = 0; j < setStatus.size(); ++j) {
-			//			if (setStatus[j] == F[b]) setStatus[j] = F[a];
-			//		}
-			//	}
-			//}
-			//else {	//- +
-			//	if (setStatus[findex] < setStatus[tindex]) {	//from(-) < to(+)
-			//		if (setStatus[tindex] == F[findex]) flag = false;
-			//		else {
-			//			int a = getIndex(F, setStatus[tindex]);
-			//			setStatus[findex] += setStatus[a];
-			//			setStatus[a] = F[findex];
-			//			for (int j = 0; j < setStatus.size(); ++j) {
-			//				if (setStatus[j] == F[a]) setStatus[j] = F[findex];
-			//			}
-			//		}
-			//	}
-			//	else {	//from(+) > to(-)
-			//		if (setStatus[findex] == F[tindex]) flag = false;
-			//		else {
-			//			int a = getIndex(F, setStatus[findex]);
-			//			setStatus[tindex] += setStatus[a];
-			//			setStatus[a] = F[tindex];
-			//			for (int j = 0; j < setStatus.size(); ++j) {
-			//				if (setStatus[j] == F[a]) setStatus[j] = F[tindex];
-			//			}
-			//		}
-			//	}
-			//}
-			//if (flag) {
-			//	MST_list.push_back(qu[i]);
-			//}
 		}	
 	}
 	void print() {
@@ -158,14 +85,6 @@ public:
 		else {
 			cout << setprecision(4) << round(count * 10000) / 10000;
 		}
-		/*if (str[7] != '0') {
-			count *= 10000;
-			count = round(count);
-			count /= 10000;
-			printf("%0.4f", count);
-		}
-		else if (count < 0.05 && count == 1) printf("%d", 0);
-		else cout << count;*/
 	}
 };
 int main(void) {
